@@ -9,6 +9,13 @@ const port=process.env.PORT || 3000;
 const connectToDb = require('./db/db')
 connectToDb();
 
+//coookie parser
+const cookieParser = require('cookie-parser')
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.use(cookieParser())
+
+
 
 //routes
 const userRoutes =require('./routes/user.routes')
