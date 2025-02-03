@@ -17,7 +17,13 @@ const App = () => {
   <Route path="/login" element={<UserLogin/>} />
   <Route path="/register" element={<UserSignup/>} />
   <Route path="/logout" element={<UserLogout/>} />
-  <Route path="/home" element={<HomePage/>} />
+  <Route path="/" element={
+    <UserProtectWrapper>
+  <HomePage/>
+    </UserProtectWrapper>
+
+  
+  } />
   <Route path="/admin-dashboard" element={
   <UserProtectWrapper>
     <RoleProtectWrapper allowedRoles={['admin']}> 

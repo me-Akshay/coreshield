@@ -21,7 +21,7 @@ const UserLogin = () => {
       if (res.status === 200) {
         login(res.data.user);
         localStorage.setItem('token', res.data.token);
-        navigate('/home');
+        navigate('/');
       }
     } catch (error) {
       console.error('Login failed:', error);

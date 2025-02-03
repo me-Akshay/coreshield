@@ -31,7 +31,7 @@ const UserSignup = () => {
       if (response.status === 201) {
         setUser(response.data.newUser);
         localStorage.setItem('token', response.data.token);
-        navigate('/home');
+        navigate('/');
       }
     } catch (error) {
       console.error('Registration failed:', error);
