@@ -57,11 +57,11 @@ const UserSignup = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
         <div className="text-center mb-6">
-          <img 
+          {/* <img 
             className="w-20 mx-auto mb-4"
             src="https://png.pngtree.com/png-vector/20220527/ourmid/pngtree-online-taxi-booking-travel-service-flat-design-illustration-via-mobile-app-png-image_4750926.png" 
             alt="Logo"
-          />
+          /> */}
           <h1 className="text-2xl font-bold">Create Account</h1>
         </div>
 
