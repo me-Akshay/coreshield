@@ -8,6 +8,7 @@ const userService = require('../services/user.service');
 module.exports.registerUser=async(req,res,next)=>{
 
     console.log("inside register ")
+    console.log("hit")
     const { fullname, email, password, roles } = req.body
         
     // Check existing user

@@ -4,6 +4,7 @@ dotenv.config();
 const express=require('express')
 const app=express()
 const port=process.env.PORT || 3000;
+const cors=require('cors')
 
 //db connection to backend
 const connectToDb = require('./db/db')
@@ -14,7 +15,7 @@ const cookieParser = require('cookie-parser')
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
-
+app.use(cors())
 
 
 //routes
