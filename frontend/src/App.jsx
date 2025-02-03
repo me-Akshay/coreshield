@@ -8,6 +8,7 @@ import AdminDashboard from './components/AdminDashboard'
 import EditorDashboard from './components/EditorDashboard'
 import ViewerDashboard from './components/ViewerDashboard'
 import UserProtectWrapper from './components/UserProtectWrapper'
+import RoleProtectWrapper from './components/RoleProtectWrapper'
 
 const App = () => {
   return (
@@ -19,7 +20,9 @@ const App = () => {
   <Route path="/home" element={<HomePage/>} />
   <Route path="/admin-dashboard" element={
   <UserProtectWrapper>
+    <RoleProtectWrapper allowedRoles={['admin']}> 
   <AdminDashboard/>
+  </RoleProtectWrapper>
   </UserProtectWrapper>
 
   } />
@@ -27,13 +30,19 @@ const App = () => {
   
   <Route path="/editor-dashboard" element={
   <UserProtectWrapper>
+    <RoleProtectWrapper allowedRoles={['editor']}> 
  <EditorDashboard/>
+ </RoleProtectWrapper>
   </UserProtectWrapper>
  } />
 
   <Route path="/viewer-dashboard" element={
-    <UserProtectWrapper><ViewerDashboard/></UserProtectWrapper>
-    
+    <UserProtectWrapper>
+      <RoleProtectWrapper allowedRoles={['viewer']}> 
+    <ViewerDashboard/> 
+    </RoleProtectWrapper> 
+    </UserProtectWrapper>
+
   } />
     </Routes> 
 </div>
